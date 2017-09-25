@@ -1,0 +1,51 @@
+// Include Bootstrap and FontAwesome
+@import "bootstrap/bootstrap";
+@import "fontawesome/font-awesome.less";
+
+// Main Variables
+@main-color:                #ffcc00;
+@alt-color:                 #666666;
+@main-color-text:           black;
+@alt-color-text:            white;
+
+// Secondary Variables
+@main-color-light:          lighten(@main-color, 35%);
+@main-color-dark:           darken(@main-color,10%);
+
+// Font Variables
+@font-face {
+  font-family: OpenSans; 
+  src: url(/fonts/SourceSansPro-Regular.ttf); 
+}
+
+@font-face {
+  font-family: BauerBodoni;
+  src: url(/fonts/Bauer-Bodoni-Bold-Italic.ttf);
+}
+
+@main-font:  OpenSans;
+@title-font: BauerBodoni;
+
+body { font-family: @main-font; }
+
+// README
+// 
+// Please add your own styles below this point.
+// LESS variables are provided above to help with the task.
+// Bootstrap and FontAwesome are also included.
+// You can write your styles in LESS or css format. 
+// An example of some LESS styles are provided below. Please remove or comment out when adding your own code.
+
+body {
+  padding: 30px;
+}
+
+h1 { 
+  background-color: @main-color;
+  padding: 15px;
+  font-family: @title-font;
+}
+
+h1 + p {
+  margin-top: 30px;
+}
