@@ -1,0 +1,45 @@
+<div class="notification panel panel-default panel-sm" ng-class="{'all-items' : limitNotify > 3}">
+    <div class="wrap-nt-item" ng-repeat="item in items | limitTo: limitNotify"
+         ng-switch="item.type">
+        <div class="nt-item" ng-switch-when="message">
+            <div class="nt-date">
+                <span>{{item.date_string}}</span>
+            </div>
+            <div class="nt-message">
+                <i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i>
+                {{ item.name }} messaged you in <a href="#">{{ item.subject }}</a>
+            </div>
+        </div>
+        <div class="nt-item" ng-switch-when="forum">
+            <div class="nt-date">
+                <span>{{item.date_string}}</span>
+            </div>
+            <div class="nt-message">
+                <i class="fa fa-comment-o fa-lg" aria-hidden="true"></i>
+                {{ item.name }} replied to you in <a href="#">{{ item.subject }}</a>
+            </div>
+        </div>
+        <div class="nt-item" ng-switch-when="gallery">
+            <div class="nt-date">
+                <span>{{item.date_string}}</span>
+            </div>
+            <div class="nt-message">
+                <i class="fa fa-picture-o fa-lg" aria-hidden="true"></i>
+                {{ item.name }} uploaded new file to gallery <a href="#">{{ item.title }}</a>
+            </div>
+        </div>
+        <div class="nt-item" ng-switch-when="file">
+            <div class="nt-date">
+                <span>{{item.date_string}}</span>
+            </div>
+            <div class="nt-message">
+                <i class="fa fa-user-o fa-lg" aria-hidden="true"></i>
+                {{ item.name }} uploaded new file <a href="#">{{ item.filename }}</a> to <a
+                    href="#">{{ item.module }}</a>
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer text-center" ng-hide="limitNotify > 3">
+        <button ng-click="viewAllNotify()">View all notification</button>
+    </div>
+</div>

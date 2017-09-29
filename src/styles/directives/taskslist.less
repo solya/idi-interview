@@ -1,0 +1,33 @@
+.task-box {
+  & .panel-footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+  & .input-group{
+    width: 100%;
+  }
+  & input[type="text"] {
+    border: 0;
+    padding: 8px 42px 8px 18px;
+    width: 100%;
+    border-bottom: 2px solid @inner-color;
+    height: 40px;
+  }
+  & .btn-input {
+    border-radius: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: none;
+    border: 0;
+    height: 40px;
+    width: 40px;
+    color: @inner-color;
+  }
+  .tasks-wrap {
+    max-height: 270px;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+}

@@ -1,0 +1,84 @@
+.notification {
+  background: @body-bg;
+  display: flex;
+  flex-direction: column;
+  max-height: 200px;
+  overflow: hidden;
+
+  & .panel-footer {
+    padding: 25px 15px;
+    & a {
+      color: @gray;
+    }
+  }
+  &.all-items {
+    overflow-y: auto;
+  }
+  & button {
+    border: 0;
+    background: none;
+    padding: 0;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .wrap-nt-item {
+    display: flex;
+    flex: auto;
+  }
+
+  .nt-item {
+    border-bottom: 1px solid #d4dfe5;
+    border-top: 1px solid #d4dfe5;
+    display: flex;
+    flex: 1 1 0;
+    & :first-child {
+      border-top: 0;
+    }
+  }
+
+  .nt-date {
+    background: #fcfcfc none repeat scroll 0 0;
+    border-right: 4px solid #d4dfe5;
+    padding: 25px 5px;
+    position: relative;
+    text-align: center;
+    width: 150px;
+    display: flex;
+    & span {
+      margin: auto;
+    }
+  }
+
+  .nt-date:before {
+    background: #d4dfe5 none repeat scroll 0 0;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    bottom: 0;
+    content: "";
+    height: 16px;
+    margin: auto;
+    position: absolute;
+    right: -10px;
+    top: 0;
+    width: 16px;
+  }
+
+  .nt-message {
+    margin: auto;
+    padding: 10px 25px;
+    width: 100%;
+    & .fa {
+      margin-right: 15px;
+    }
+    & a {
+      text-decoration: underline;
+      color: #000;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

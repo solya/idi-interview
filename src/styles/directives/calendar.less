@@ -1,0 +1,25 @@
+.calendar {
+  .table {
+    margin-bottom: 0;
+    height: 376px;
+  }
+
+  .table > thead > tr > th {
+    width: 125px;
+    text-align: center;
+    padding: 0;
+  }
+
+  .table > tbody > tr > td {
+    text-align: right;
+    > .day-number {
+      min-height: 40px;
+    }
+    &.active {
+      background-color: @main-color-light;
+    }
+    &.inactive-day {
+      color: #c3c3c3;
+    }
+  }
+}

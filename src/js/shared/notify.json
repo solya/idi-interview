@@ -1,0 +1,7 @@
+[
+  {"type": "message", "name":"Gregory Windsor", "subject":"subject1", "date": "2016-01-01T00:00:00"},
+  {"type": "forum", "name":"Noah Cranock", "subject":"subject1", "date": "2017-02-12T00:00:00"},
+  {"type": "gallery", "name":"Tom Black", "title":"Main Gallery", "date": "2017-04-01T00:00:00"},
+  {"type": "gallery", "name":"Jamie Ritchie", "title":"Photo Gallery", "date": "2017-07-01T00:00:00"},
+  {"type": "file", "name":"Daley Blind", "filename":"dev.js", "module":"JavaScript", "date": "2017-08-03T00:00:00"}
+]

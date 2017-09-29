@@ -2,10 +2,18 @@
 @import "bootstrap/bootstrap";
 @import "fontawesome/font-awesome.less";
 
+// Include derictives
+@import "directives/notification.less";
+@import "directives/cohort.less";
+@import "directives/profile.less";
+@import "directives/calendar.less";
+@import "directives/taskslist.less";
+
 // Main Variables
 @main-color: #ffcc00;
 @alt-color: #666666;
 @bg-color: #ededed;
+
 @inner-color: #d0dce3;
 @main-color-text: black;
 @alt-color-text: white;
@@ -13,23 +21,26 @@
 // Secondary Variables
 @main-color-light: lighten(@main-color, 35%);
 @main-color-dark: darken(@main-color, 10%);
+@panel-bg-dark: #ddd;
 
 // Font Variables
 @font-face {
   font-family: OpenSans;
-  src: url(/fonts/SourceSansPro-Regular.ttf);
+  src: url(../fonts/SourceSansPro-Regular.ttf);
 }
 
 @font-face {
   font-family: BauerBodoni;
-  src: url(/fonts/Bauer-Bodoni-Bold-Italic.ttf);
+  src: url(../fonts/Bauer-Bodoni-Bold-Italic.ttf);
 }
 
 @main-font: OpenSans;
 @title-font: BauerBodoni;
 
 body {
+  padding-left: 209px;
   font-family: @main-font;
+  background: @bg-color;
 }
 
 // README
@@ -40,10 +51,6 @@ body {
 // You can write your styles in LESS or css format. 
 // An example of some LESS styles are provided below. Please remove or comment out when adding your own code.
 
-body {
-  padding-left: 209px;
-}
-
 h1 {
   font-family: @main-font;
   background: #fff;
@@ -52,30 +59,39 @@ h1 {
   font-size: @font-size-h3;
 }
 
-.btn-orange {
-  border-color: @main-color;
+a {
+  color: @main-color-text
+}
+
+.btn-border-main {
+  border: 2px solid @main-color;
   display: block;
-  margin: 0 auto 20px;
   font-size: @font-size-large;
-  &:hover, &:focus, &:active {
+  max-width: 330px;
+  margin: auto;
+  color: @main-color-text;
+  transition: all 0.25s ease;
+  &.mb-20 {
+    margin-bottom: 20px;
+  }
+  &:hover {
     background: @main-color;
     color: @alt-color-text;
     border-color: @main-color;
   }
 }
-.btn-border{
-  border: 1px solid #000;
+
+.btn-border {
+  border: 1px solid @gray-base;
   color: #000;
 }
-.btn-dark{
+
+.btn-dark {
   background: @gray-dark;
-}
-.btn-box {
-  padding: 0 16%;
 }
 
 aside {
-  background: #fc0 none repeat scroll 0 0;
+  background: @main-color;
   height: 100%;
   left: 0;
   padding: 43px 37px 0 13px;
@@ -104,14 +120,8 @@ aside {
   }
 }
 
-nav a,
-.top-nav a {
-  color: @main-color-text;
-}
-
 main {
-  background: @bg-color;
-  padding: 14px 0;
+  padding: 15px 0;
 }
 
 .top-nav {
@@ -120,141 +130,24 @@ main {
   & a {
     padding: 0 5px;
     font-size: 16px;
+    text-decoration: none;
   }
 }
 
 .panel-sm {
   min-height: 320px;
 }
+
 .panel-md {
   min-height: 425px;
   position: relative;
 }
 
-.panel-heading {
+.panel-default .panel-heading {
   font-size: @font-size-large;
+  background-color: @panel-bg-dark;
 }
 
-.panel-profile .panel-heading {
-  background-size: cover;
-  height: 192px;
-}
-
-.panel-profile .panel-title {
-  margin-top: 4px;
-  font-size: @font-size-large;
-}
-
-.panel-profile-img {
-  border-radius: @border-radius-base;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  margin-bottom: 5px;
-  margin-top: -80px;
-  max-width: 100px;
-}
 .panel-footer {
-  background-color: @body-bg;
-}
-
-.info-box {
-  color: @gray-light;
-  & span {
-    padding: 0 12px;
-  }
-}
-.task-box .panel-footer{
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-}
-
-.notification {
-  background: @body-bg;
-  display: flex;
-  flex-direction: column;
-  & .panel-footer {
-    padding: 25px 15px;
-    & a {
-      color: @gray;
-    }
-  }
-}
-
-.nt-item {
-  border-bottom: 1px solid #d4dfe5;
-  border-top: 1px solid #d4dfe5;
-  display: flex;
-  flex: 1 1 0;
-  & :first-child{
-    border-top: 0;
-  }
-}
-
-.nt-date {
-  background: #fcfcfc none repeat scroll 0 0;
-  border-right: 4px solid #d4dfe5;
-  padding: 25px 0;
-  position: relative;
-  text-align: center;
-  width: 150px;
-}
-
-.nt-date:before {
-  background: #d4dfe5 none repeat scroll 0 0;
-  border: 2px solid #fff;
-  border-radius: 100%;
-  bottom: 0;
-  content: "";
-  height: 16px;
-  margin: auto;
-  position: absolute;
-  right: -10px;
-  top: 0;
-  width: 16px;
-}
-
-.nt-message {
-  margin: auto;
-  padding: 0 25px;
-  width: 100%;
-}
-
-.wrapper-profile {
-  max-height: 340px;
-  overflow-y: scroll;
-}
-
-.profile-item {
-  float: left;
-  margin-bottom: 5%;
-  margin-right: 4%;
-  width: 16%;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.profile-item > img {
-  width: 100%;
-}
-.calendar .table{
-  margin-bottom: 0;
-  height: 376px;
-}
-
-.table > thead > tr > th {
-  width: 125px;
-  text-align: center;
-  padding: 0;
-}
-
-.table > tbody > tr > td {
-  text-align: right;
-  > .day-number {
-    min-height: 40px;
-
-  }
-}
-.prev-month,
-.next-month {
-  color: @alt-color;
+  background-color: @panel-bg;
 }
